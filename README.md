@@ -1,12 +1,16 @@
 <p align="center">
-  <a href="https://www.higginsd.com"><img src="assets/hero.gif" width="100%" alt="Higgins Digital — websites that push businesses forward. Decorative animated cover: the Higgins Digital H logo on black beside electric-blue circuit lines with occasional gold pulses." /></a>
+  <a href="https://www.higginsd.com"><img src="assets/hero.svg" width="100%" alt="Higgins Digital: websites that push businesses forward. Animated cover with the Higgins Digital logo on a black starfield beside circuit traces carrying blue and gold pulses and crossing blue and gold marquee bands of services." /></a>
 </p>
 
 <h1 align="center">Higgins Digital</h1>
 
+<p align="center"><strong>The website for Higgins Digital, my software development company: studio, work, services, and a direct path to start a project.</strong></p>
+
 <p align="center">
-  <strong>The website for Higgins Digital, my software development company: studio, work, services, and a direct path to start a project.</strong><br />
-  <a href="https://www.higginsd.com"><strong>Visit higginsd.com ↗</strong></a> · <a href="https://www.higginsd.com/work">Work</a> · <a href="https://www.higginsd.com/services">Services</a> · <a href="https://davishiggins.com">Davis Higgins</a>
+  <a href="https://www.higginsd.com"><img src="assets/btn-open.svg" height="44" alt="Visit higginsd.com" /></a>&nbsp;
+  <a href="https://www.higginsd.com/work"><img src="assets/btn-work.svg" height="44" alt="Work" /></a>&nbsp;
+  <a href="https://www.higginsd.com/services"><img src="assets/btn-services.svg" height="44" alt="Services" /></a>&nbsp;
+  <a href="https://davishiggins.com"><img src="assets/btn-dh.svg" height="44" alt="Davis Higgins" /></a>
 </p>
 
 <p align="center"><sub>Live · Founded, designed, and built by Davis Higgins · Charlotte, NC</sub></p>
@@ -23,7 +27,7 @@
 
 ## What it does
 
-- **Shows the work first.** A full-bleed project grid leads to a case study for each build. Every study covers the problem, the direction, what was built, and checkable specifics, with client and in-house work labeled honestly.
+- **Shows the work first.** A full-bleed project grid leads to a case study for every build, covering the problem, the direction, what was built, and the specifics.
 - **Explains what the company does.** Services, pricing, and a growth offering each get a focused page, plus location pages for the Charlotte market.
 - **Makes starting a project easy.** Contact paths, email, and social links are reachable from the menu and the footer on every page.
 
@@ -31,37 +35,40 @@
 
 Higgins Digital builds websites, platforms, and AI-powered systems for businesses. A company that sells high-end web work has to prove it on its own site first, so this one is held to the same bar as client builds: deliberate typography, motion with a purpose, and accessibility that survives the animation.
 
-It's also the public record of my work. Every case study comes from one typed source, so a project can't be described two different ways on two different pages.
+It's also the public record of my work, with every case study told one consistent way across the site.
 
 ## What I built
 
 I founded Higgins Digital and designed and built its site:
 
 - Information architecture across home, work, case studies, services, pricing, about, contact, blog, and location pages
-- A single typed content source that feeds the work grid, every case study, related links, and metadata
+- A single content source that powers the work grid, every case study, and related links
 - Motion: route transitions, a full-screen menu with marquee hover bands, and scroll scenes, all with reduced-motion paths
-- SEO foundations: generated sitemap and robots, structured data, per-page metadata, and an MDX blog
-- A private sign-in area that isn't part of this showcase
+- Search foundations: sitemap, structured data, per-page metadata, and a blog
+- A private client area
 
-## How it's put together
+<details>
+<summary><strong>How it's put together</strong></summary>
+
+<br />
 
 ```mermaid
 flowchart TB
-    C[Typed content sources<br/>projects · services · pricing] --> P[Next.js App Router pages]
-    M[MDX articles] --> P
-    P --> S[Static, SEO-ready routes<br/>sitemap · structured data]
-    P --> X[Client motion layer<br/>GSAP · ScrollTrigger · Lenis]
-    S --> V[Vercel]
-    X --> V
+    C[One content source<br/>work · services · pricing] --> P[Site pages]
+    A[Articles] --> P
+    P --> S[Search-ready routes]
+    P --> M[Motion layer]
+    S --> V[Live site]
+    M --> V
 ```
-
-### Engineering decisions
 
 | Decision | Why |
 |---|---|
-| **One source of truth for the work** | Every project lives once in a typed data file that feeds the grid, case studies, related links, and metadata. A test fails the build if a project's images are missing. Outcomes can only appear with a cited source, so there are no invented performance numbers. |
-| **Motion is scoped and reversible** | Animations are built with component-scoped GSAP contexts and explicit ScrollTrigger cleanup, so route changes never leave stale listeners behind. Every animated section has a `prefers-reduced-motion` equivalent. |
-| **Accessible structure under the effects** | Clickable areas are real links and buttons. The menu traps and restores focus and works from the keyboard. Low-contrast brand colors were adjusted until filled controls cleared WCAG AA. |
+| **One source of truth for the work** | Every project is described once and appears consistently everywhere it's referenced, so case studies can't drift out of sync. |
+| **Motion that cleans up after itself** | Animations are scoped to the page they belong to, so moving around the site never leaves anything stuck or sluggish, and every scene has a reduced-motion version. |
+| **Accessible under the effects** | Interactive elements are real links and buttons, the menu works fully from the keyboard, and brand colors were tuned until controls met contrast standards. |
+
+</details>
 
 ## Screens
 
@@ -79,19 +86,17 @@ flowchart TB
 
 ## Technology
 
-| Layer | Technology | Responsibility |
-|---|---|---|
-| Framework | Next.js 15 (App Router), React 19, TypeScript, Tailwind CSS | Pages, routing, metadata |
-| Content | Typed data modules, MDX (next-mdx-remote) | Case studies, services, articles |
-| Motion | GSAP with ScrollTrigger, Lenis, Three.js | Transitions, menu, scroll scenes |
-| Data | Supabase | Private client area and website-audit request intake |
-| Quality | Playwright | End-to-end and data-integrity checks |
-| Hosting | Vercel | Deployment |
+| Layer | Technology |
+|---|---|
+| Framework | Next.js, React, TypeScript, Tailwind CSS |
+| Motion | GSAP, Lenis, Three.js |
+| Hosting | Vercel |
 
-## About this repository
+---
 
-This is a documentation-only showcase. The site's source, client data, and private areas aren't included here.
+<p align="center">
+  <a href="https://www.higginsd.com"><img src="assets/btn-open.svg" height="44" alt="Visit higginsd.com" /></a>&nbsp;
+  <a href="https://github.com/DavisHiggins"><img src="assets/btn-more.svg" height="44" alt="More of my work" /></a>
+</p>
 
-**[Visit higginsd.com ↗](https://www.higginsd.com)** · Built by [Davis Higgins](https://davishiggins.com) · [More of my work](https://github.com/DavisHiggins)
-
-<sub>© 2026 Davis Higgins. Text and images in this repository are shared for portfolio viewing. The Higgins Digital name and logo belong to Davis Higgins. Project imagery shown in screenshots belongs to the respective projects and clients.</sub>
+<p align="center"><sub>© 2026 Davis Higgins. All rights reserved. The Higgins Digital name and logo belong to Davis Higgins. Project imagery belongs to the respective projects and clients.</sub></p>
