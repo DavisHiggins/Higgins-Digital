@@ -88,12 +88,6 @@ flowchart TB
 | Quality | Playwright | End-to-end and data-integrity checks |
 | Hosting | Vercel | Deployment |
 
-## Credits and notes
-
-- **Design lineage.** Parts of the presentation layer (page composition, GSAP timing values, and navigation and transition structure) derive from the open-source [K72 recreation](https://github.com/AyushAwasthi26/K72) by Ayush Awasthi, under the MIT License. I ported it from Vite and React Router to the Next.js App Router and substantially rewrote it, including reduced-motion handling, semantic controls, and focus management that the original lacked.
-- **Typography in this repository.** The live site is set in a commercial typeface. The cover graphic above uses Inter Tight as a free stand-in and doesn't redistribute any font.
-- **No invented metrics.** The site and this showcase report scope, not traffic or conversion numbers.
-
 ## About this repository
 
 This is a documentation-only showcase. The site's source, client data, and private areas aren't included here.
